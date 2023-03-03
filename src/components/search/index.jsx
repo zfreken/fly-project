@@ -1,8 +1,9 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
 import { Context } from "../../context";
+import {useOnClickOutside} from "../../hooks";
 import { SvgDate, SvgRight } from "../../assets/icons";
 import "./style.scss";
 
@@ -10,6 +11,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const Search = () => {
+  const refDropPerson = useRef();
   const { register, handleSubmit, control } = useForm();
   let navigate = useNavigate();
   const [dropPerson, setDropPerson] = useState(false);
@@ -18,6 +20,8 @@ export const Search = () => {
   const [passengerCount, setPassengerCount] = useState(1);
   const { updateFilter, filter, getFilteredFlightData } = useContext(Context);
 
+  useOnClickOutside(refDropPerson, () => setDropPerson(false), "dropPerson");
+  
   const destination = [
     { value: "ESB", label: "Ankara Esenboğa (ESB)" },
     { value: "AYT", label: "Antalya (AYT)" },
@@ -43,7 +47,7 @@ export const Search = () => {
       if (getFlightData.length > 0) {
         setSubmitCheck(false);
         navigate("/list");
-      }else{
+      } else {
         showToastMessage();
       }
     }
@@ -99,12 +103,14 @@ export const Search = () => {
           <div
             className="form-control form-control-dark cursor-pointer"
             aria-hidden="true"
+           id="dropPerson"
             onClick={() => setDropPerson(!dropPerson)}
           >
             Yolcu <span className="count">{passengerCount}</span>
           </div>
         </div>
         <div
+         ref={refDropPerson}
           className={`search__passenger mobile-space p-3  ${
             dropPerson ? "d-block" : "d-none"
           }`}
