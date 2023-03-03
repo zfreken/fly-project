@@ -1,0 +1,32 @@
+@use "variables";
+body {
+  font-family: "Nunito Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-red,
+.btn-red:hover {
+  background-color: variables.$red;
+  color: variables.$white;
+}
+.btn-grey,
+.btn-grey:hover {
+  background-color: variables.$grey;
+  color: #838788;
+}
+.btn-grey:disabled {
+  background-color: #f7f8f8;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.container {
+  @media (min-width: 1200px) {
+    width: 1024px;
+  }
+}
+.fs-7 {
+  font-size: 12px;
+}

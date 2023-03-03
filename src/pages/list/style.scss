@@ -1,0 +1,23 @@
+@use "../../styles/variables";
+
+.form-check-input {
+  width: 50px !important;
+  height: 25px !important;
+}
+.list {
+  &__filter {
+    background-color: #222b3b;
+    color: variables.$white;
+    font-size: 14px;
+  }
+  &__filter-btn {
+    background: transparent;
+    color: variables.$white;
+    border: 1px solid variables.$white;
+    border-radius: 4px;
+    &:hover {
+      background: variables.$white;
+      color: #222b3b;
+    }
+  }
+}

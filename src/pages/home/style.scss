@@ -1,0 +1,7 @@
+@use "../../styles/variables";
+
+.home-page {
+  height: 100vh;
+  background-color: variables.$background-color;
+  padding-top: 10em;
+}

@@ -1,0 +1,37 @@
+@use "../../styles/variables";
+
+.flight {
+  &__card {
+    background: variables.$white;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 5%);
+    padding: 20px 15px;
+    width: 100%;
+    position: relative;
+    svg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 10px;
+      margin: auto;
+      width: 15px;
+      height: 15px;
+    }
+  }
+  &__check {
+    width: 18px;
+    height: 18px;
+  }
+  &__info {
+    position: relative;
+    &::after {
+      content: "";
+      width: 68%;
+      background: #534e4e;
+      height: 1px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  }
+}

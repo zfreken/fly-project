@@ -1,0 +1,20 @@
+.card {
+  padding-bottom: 50px;
+  &__body {
+    min-height: 200px;
+  }
+  &__currency {
+    font-size: 10px;
+    position: relative;
+    top: -6px;
+  }
+  &__btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    &:disabled {
+      background-color: #d9e0e8 !important;
+    }
+  }
+}
