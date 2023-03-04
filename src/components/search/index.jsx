@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
 import { Context } from "../../context";
-import {useOnClickOutside} from "../../hooks";
+import { useOnClickOutside } from "../../hooks";
 import { SvgDate, SvgRight } from "../../assets/icons";
 import "./style.scss";
 
