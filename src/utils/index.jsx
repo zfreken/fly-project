@@ -1,1 +1,1 @@
-export * from "./sortByDateTime";
+export * from "./sortBy";

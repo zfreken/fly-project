@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 
 import { MockData } from "../data";
 import { useLocalStorage } from "../hooks/useLocalStorage";
-import { sortByDateTime } from "../utils";
+import { sortByDateTime, sortByPrice } from "../utils";
 
 export const Context = createContext({});
 
@@ -35,6 +35,14 @@ export const ContextProvider = ({ children }) => {
     });
   };
 
+  const sortByFlights=(data)=>{
+    switch (sortBy) {
+      case "arrivalDateTime":
+        return sortByDateTime(data)
+      default:
+        return sortByPrice(data)
+    }
+  }
   const getFilteredFlightData = () => {
     let filteredData = JSON.parse(JSON.stringify(data));
 
@@ -59,9 +67,7 @@ export const ContextProvider = ({ children }) => {
       }
     }
 
-    return sortBy === "arrivalDateTime"
-      ? sortByDateTime(filteredData)
-      : filteredData;
+    return sortByFlights(filteredData);
   };
 
   const sumTotal = () => {
