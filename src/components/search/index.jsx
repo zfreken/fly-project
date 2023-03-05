@@ -42,9 +42,9 @@ export const Search = () => {
   };  
 
   useEffect(() => {
-    if (submitCheck && Object.keys(filter).length > 0) {
+    if (submitCheck && Object.keys(filter).length) {
       const getFlightData = getFilteredFlightData();
-      if (getFlightData.length > 0) {
+      if (getFlightData.length) {
         setSubmitCheck(false);
         navigate("/list");
       } else {

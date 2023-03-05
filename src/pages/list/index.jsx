@@ -69,7 +69,7 @@ export const List = () => {
           </button>
         </div>
         <div className="pt-3 px-4">
-          {data.length > 0 &&
+          {data.length &&
             data.map((flight, i) => <Card key={i} flight={flight} />)}
         </div>
       </div>

@@ -46,7 +46,7 @@ export const ContextProvider = ({ children }) => {
   const getFilteredFlightData = () => {
     let filteredData = JSON.parse(JSON.stringify(data));
 
-    if (Object.keys(filter).length > 0) {
+    if (Object.keys(filter).length) {
       filteredData = filteredData.filter(
         (f) =>
           f?.destinationAirport?.code === filter?.destinationAirport?.value &&
