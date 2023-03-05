@@ -9,6 +9,11 @@
   &__group {
     position: relative;
     padding-right: 5px;
+
+    @media screen and (max-width: 767px) {
+      border: 2px solid gray;
+      padding-right: 0;
+    }
   }
   &__date {
     svg {
